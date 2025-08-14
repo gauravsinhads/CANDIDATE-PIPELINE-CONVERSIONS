@@ -25,7 +25,6 @@ cp_original = pd.read_csv("Sourcingi_BAG_.csv")
 # Convert date columns to datetime
 cp_original['INVITATIONDT'] = pd.to_datetime(cp_original['INVITATIONDT'], errors='coerce')
 cp_original['ACTIVITY_CREATED_AT'] = pd.to_datetime(cp_original['ACTIVITY_CREATED_AT'], errors='coerce')
-cp_original['INSERTEDDATE'] = pd.to_datetime(cp_original['INSERTEDDATE'], errors='coerce')
 
 # Pre-process folder title columns for efficient string operations
 cp_original['FOLDER_FROM_TITLE_CLEAN'] = cp_original['FOLDER_FROM_TITLE'].fillna('').str.strip().str.lower()
@@ -231,5 +230,6 @@ if total_unique_ids_for_percentage > 0:
     st.dataframe(summary_df, use_container_width=True)
 else:
     st.info("No data to compute metrics after filtering.")
+
 
 
