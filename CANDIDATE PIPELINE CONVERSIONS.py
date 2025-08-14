@@ -41,7 +41,7 @@ st.divider()
 st.subheader("Filters")
 
 # Ensure valid dates before showing date filter
-valid_invitation_dates = cp_original['INVITATIONDT'].dropna()
+valid_invitation_dates = cp_original['ACTIVITY_CREATED_AT'].dropna()
 if valid_invitation_dates.empty:
     st.error("No valid INVITATIONDT values available in the data.")
     st.stop()
@@ -230,6 +230,7 @@ if total_unique_ids_for_percentage > 0:
     st.dataframe(summary_df, use_container_width=True)
 else:
     st.info("No data to compute metrics after filtering.")
+
 
 
 
