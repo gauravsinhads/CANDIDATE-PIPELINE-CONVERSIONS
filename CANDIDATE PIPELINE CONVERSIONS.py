@@ -20,7 +20,7 @@ CUSTOM_COLORS = ["#2F76B9", "#3B9790", "#F5BA2E",
                  "#026df5", "#5aede2"]
 
 # Load the data
-cp_original = pd.read_csv("Sourcing_activ_jun.csv")
+cp_original = pd.read_csv(""Sourcing_activ_aug.csv"")
 
 # Convert date columns to datetime
 cp_original['INVITATIONDT'] = pd.to_datetime(cp_original['INVITATIONDT'], errors='coerce')
@@ -230,6 +230,7 @@ if total_unique_ids_for_percentage > 0:
     st.dataframe(summary_df, use_container_width=True)
 else:
     st.info("No data to compute metrics after filtering.")
+
 
 
 
