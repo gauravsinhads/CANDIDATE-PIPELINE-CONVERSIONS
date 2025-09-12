@@ -53,7 +53,7 @@ if pd.isna(min_date) or pd.isna(max_date):
     st.error("Could not determine a valid date range from INVITATIONDT.")
     st.stop()
 
-default_start_date = (max_date - pd.Timedelta(days=30)).date()
+default_start_date = (max_date - pd.Timedelta(days=31)).date()
 
 start_date_val, end_date_val = st.date_input(
     "Select Date Range (based on Invitation Date)",
@@ -231,6 +231,7 @@ if total_unique_ids_for_percentage > 0:
     st.dataframe(summary_df, use_container_width=True)
 else:
     st.info("No data to compute metrics after filtering.")
+
 
 
 
