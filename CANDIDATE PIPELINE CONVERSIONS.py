@@ -6,11 +6,12 @@ st.set_page_config(page_title="CANDIDATE PIPELINE CONVERSIONS", layout="wide")
 
 # Define system folders globally (converted to lowercase for consistent comparison)
 SYSTEM_FOLDERS = [
-    'Inbox', 'Unresponsive', 'Completed', 'Unresponsive Talkscore', 'Passed MQ', 'Failed MQ',
-    'TalkScore Retake', 'Unresponsive Talkscore Retake', 'Failed TalkScore', 'Cold Leads',
-    'Cold Leads Talkscore', 'Cold Leads Talkscore Retake', 'On hold', 'Rejected',
-    'Talent Pool', 'Shortlisted', 'Hired',
-    'Candidate Databank','For Talkscore','Tier 2 Program','Tier 1 Program','For Versant','For Reengagement'
+    '', 'Inbox', 'Unresponsive', 'Completed', 'Unresponsive Talkscore', 'Passed MQ', 'Failed MQ',
+            'TalkScore Retake', 'Unresponsive Talkscore Retake', 'Failed TalkScore', 'Cold Leads',
+            'Cold Leads Talkscore', 'Cold Leads Talkscore Retake', 'On hold', 'Rejected',
+            'Talent Pool', 'Shortlisted', 'Hired', 'Candidate Databank', 'For Talkscore',
+            'Tier 2 Program', 'Tier 1 Program', 'For Versant', 'For Reengagement', 'Unresponsive Prescreening', 'Passed Talkscore', 
+            'Cold Leads Prescreening'
 ]
 SYSTEM_FOLDERS_LOWER = {s.lower() for s in SYSTEM_FOLDERS} # Use a set for faster lookups
 
@@ -230,6 +231,7 @@ if total_unique_ids_for_percentage > 0:
     st.dataframe(summary_df, use_container_width=True)
 else:
     st.info("No data to compute metrics after filtering.")
+
 
 
 
